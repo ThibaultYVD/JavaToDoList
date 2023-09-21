@@ -24,28 +24,23 @@ public class Main {
             
             switch (choice) {
 			case 1: {
-				System.out.println("Entrez la description de la tâche :");
-				String description = scanner.nextLine();
-				Task task = new Task(tasks.size() + 1, description);
-				tasks.addTask(task);
-				System.out.println("Tâche ajouté avec succès");
+				Methodes crud = new Methodes();
+				crud.INSERT();
 				break;
 			}
 			
 			case 2:{
-				tasks.displayTasks();
+				Methodes crud = new Methodes();
+				crud.SELECT();
 				break;
 			}
 			
 			case 3:
                 System.out.print("Entrez le numéro de la tâche à marquer comme terminée : ");
                 int taskId = scanner.nextInt();
-                boolean marked = tasks.markTaskAsCompleted(taskId);
-                if (marked) {
-                    System.out.println("Tâche marquée comme terminée avec succès !");
-                } else {
-                    System.out.println("La tâche avec l'ID spécifié n'a pas été trouvée.");
-                }
+                Methodes crud = new Methodes();
+				crud.UPDATEIsCompleted(taskId);
+
                 break;
             case 4:
                 System.out.println("Au revoir !");

@@ -6,13 +6,13 @@ public class Task {
 
 	private int id;
 	private String description;
-	private boolean isCompleted;
+	private String isCompleted;
 	private Task task;
 	
-	public Task(int id, String description) {
+	public Task(int id, String description, String isCompleted) {
 		this.id = id;
 		this.description = description;
-		this.isCompleted = false;
+		this.isCompleted = isCompleted;
 	}
 	
 	public int getId() {
@@ -23,12 +23,12 @@ public class Task {
 		return description;
 	}
 	
-	public boolean getIsCompleted() {
+	public String getIsCompleted() {
 		return isCompleted;
 	}
 	
 	public void setAsCompleted() {
-		isCompleted = true;
+		isCompleted = "Fait";
 	}
 	
 
